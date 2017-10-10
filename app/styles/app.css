@@ -1,0 +1,23 @@
+h1.ui.center.header {
+  padding: 1em 0em;
+}
+
+.card {
+  padding: 20px !important;
+}
+
+.card img {
+  height: 150px
+}
+
+.card .back {
+  display: none;
+}
+
+.card.reveal .back {
+  display: block;
+}
+
+.card.reveal .front {
+  display: none;
+}
