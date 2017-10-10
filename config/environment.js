@@ -4,6 +4,7 @@
 module.exports = function(environment) {
   let ENV = {
     modulePrefix: 'concentration',
+    podModulePrefix: 'concentration/pods',
     environment,
     rootURL: '/',
     locationType: 'auto',
