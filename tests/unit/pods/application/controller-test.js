@@ -80,15 +80,16 @@ test('gameOver computed property is triggered when all cards have been matched',
 });
 
 test('statusMessage reflects the current state of the game', function(assert) {
-  let controller = this.subject(),
-      cardsWithMetadata = controller.get('cardsWithMetadata');
+  let controller = this.subject();
 
   assert.equal(controller.get('statusMessage'), 'Score: 0, Attempts: 0', 'statusMessage initializes by displaying score and number of attempts');
 
-  cardsWithMetadata = cardsWithMetadata.map((card) => {
+  let newCardData = controller.get('cardsWithMetadata').map((card) => {
     card.set('match', true);
     return card;
   });
+
+  controller.set('cardsWithMetadata', newCardData);
 
   assert.equal(controller.get('statusMessage'), 'Game Over! You finished with a score of 0 out of a possible 6', 'statusMessage displays final score when all cards are matched');
 });
