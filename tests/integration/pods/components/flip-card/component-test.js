@@ -37,18 +37,3 @@ test('class name bindings are functional', function(assert) {
     assert.ok(this.$('div').hasClass(classBindings[prop]), `Class name binding for '${prop}' added the class of '${classBindings[prop]}'`);
   }
 });
-
-test('click events modify card state in expected manner', function(assert) {
-
-  // Confirm setting disabled flag to true prevents click event from modifying
-  // state
-  this.set('disabled', true);
-  this.$('div').click();
-  assert.notOk(this.$('div').hasClass('reveal'), `'reveal' class prevented from being added to component element`);
-
-  // Confirm setting disabled flag to true prevents click event from modifying
-  // state
-  this.set('disabled', false);
-  this.$('div').click();
-  assert.ok(this.$('div').hasClass('reveal'), `'reveal' class allowed to be added to component element`);
-});
