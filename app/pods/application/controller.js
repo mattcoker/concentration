@@ -9,6 +9,8 @@ export default Ember.Controller.extend({
     '/assets/images/polymer.png',
     '/assets/images/backbone.png'
   ],
+  score: 0,
+  attempts: 0,
 
   randomizedCards: Ember.computed('images.length', function() {
     let images = this.get('images'),
