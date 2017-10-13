@@ -13,7 +13,7 @@ moduleForComponent('flip-card', 'Integration | Component | flip card', {
       disabled: false
     });
 
-    this.render(hbs`{{flip-card card=card disabled=disabled}}`);
+    this.render(hbs`{{flip-card card=card}}`);
   }
 });
 
