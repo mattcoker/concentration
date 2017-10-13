@@ -2,13 +2,14 @@ import Ember from 'ember';
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
+const emberImage = '/assets/images/ember.png';
+
 moduleForComponent('flip-card', 'Integration | Component | flip card', {
   integration: true,
 
   beforeEach: function() {
-    let imagePath = 'https://upload.wikimedia.org/wikipedia/en/6/69/Ember.js_Logo_and_Mascot.png';
     this.setProperties({
-      card: Ember.Object.create({ index: 0, image: imagePath, reveal: false, matched: false }),
+      card: Ember.Object.create({ index: 0, image: emberImage, reveal: false, matched: false }),
       disabled: false
     });
 
