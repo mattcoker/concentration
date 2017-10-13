@@ -1,4 +1,4 @@
-import Ember from 'ember';
+import EmberObject from '@ember/object';
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
@@ -9,9 +9,9 @@ moduleForComponent('flip-grid', 'Integration | Component | flip grid', {
   integration: true,
 
   beforeEach: function() {
-    let card1 = Ember.Object.create({ index: 0, image: emberImage, reveal: false, matched: false }),
-        card2 = Ember.Object.create({ index: 1, image: reactImage, reveal: false, matched: false }),
-        card3 = Ember.Object.create({ index: 2, image: emberImage, reveal: false, matched: false });
+    let card1 = EmberObject.create({ index: 0, image: emberImage, reveal: false, matched: false }),
+        card2 = EmberObject.create({ index: 1, image: reactImage, reveal: false, matched: false }),
+        card3 = EmberObject.create({ index: 2, image: emberImage, reveal: false, matched: false });
 
     this.setProperties({
       cards: [card1, card2, card3],

@@ -1,9 +1,10 @@
-import Ember from 'ember';
+import { alias } from '@ember/object/computed';
+import Component from '@ember/component';
 
-export default Ember.Component.extend({
+export default Component.extend({
   classNames: ['card','center','aligned'],
   classNameBindings: ['reveal', 'match:has-been-matched'],
 
-  reveal: Ember.computed.alias('card.reveal'),
-  match:  Ember.computed.alias('card.match')
+  reveal: alias('card.reveal'),
+  match:  alias('card.match')
 });

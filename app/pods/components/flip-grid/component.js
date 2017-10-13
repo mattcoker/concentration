@@ -1,9 +1,11 @@
-import Ember from 'ember';
+import { later } from '@ember/runloop';
+import { computed } from '@ember/object';
+import Component from '@ember/component';
 
-export default Ember.Component.extend({
+export default Component.extend({
   classNames: ['ui','four','stackable','cards'],
 
-  selectedCards: Ember.computed(function() {
+  selectedCards: computed(function() {
     // Create new array for each instance of the grid component
     return [];
   }),
@@ -39,7 +41,7 @@ export default Ember.Component.extend({
         return;
       }
 
-      Ember.run.later(() => {
+      later(() => {
         let scoreDelta = -.25;
         // Pair has been selected, set reveal to false for all selected cards
         this.setHidden(firstSelected, selectedCard);

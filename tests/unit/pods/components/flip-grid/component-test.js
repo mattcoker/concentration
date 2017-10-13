@@ -1,4 +1,4 @@
-import Ember from 'ember';
+import EmberObject from '@ember/object';
 import { moduleForComponent, test } from 'ember-qunit';
 
 const emberImage = '/assets/images/ember.png',
@@ -13,9 +13,9 @@ moduleForComponent('flip-grid', 'Unit | Component | flip grid', {
 test('checkMatch function properly identifies matching cards', function(assert) {
   // Creates the component instance
   let component = this.subject(),
-      card1 = Ember.Object.create({ index: 0, image: emberImage, reveal: false, matched: false }),
-      card2 = Ember.Object.create({ index: 1, image: reactImage, reveal: false, matched: false }),
-      card3 = Ember.Object.create({ index: 2, image: emberImage, reveal: false, matched: false });
+      card1 = EmberObject.create({ index: 0, image: emberImage, reveal: false, matched: false }),
+      card2 = EmberObject.create({ index: 1, image: reactImage, reveal: false, matched: false }),
+      card3 = EmberObject.create({ index: 2, image: emberImage, reveal: false, matched: false });
 
   assert.ok(component.checkMatch(card1, card3), 'Cards with same image URLs "match"');
   assert.notOk(component.checkMatch(card1, card2), 'Cards with different image URLs do not "match"');
@@ -24,8 +24,8 @@ test('checkMatch function properly identifies matching cards', function(assert) 
 test('setHidden function properly hides revealed cards', function(assert) {
   // Creates the component instance
   let component = this.subject(),
-      card1 = Ember.Object.create({ index: 0, image: emberImage, reveal: true, matched: false }),
-      card2 = Ember.Object.create({ index: 1, image: emberImage, reveal: true, matched: false });
+      card1 = EmberObject.create({ index: 0, image: emberImage, reveal: true, matched: false }),
+      card2 = EmberObject.create({ index: 1, image: emberImage, reveal: true, matched: false });
 
   component.setHidden(card1, card2);
 
@@ -35,8 +35,8 @@ test('setHidden function properly hides revealed cards', function(assert) {
 test('setMatched function properly sets matched value on cards', function(assert) {
   // Creates the component instance
   let component = this.subject(),
-      card1 = Ember.Object.create({ index: 0, image: emberImage, reveal: true, matched: false }),
-      card2 = Ember.Object.create({ index: 1, image: emberImage, reveal: true, matched: false });
+      card1 = EmberObject.create({ index: 0, image: emberImage, reveal: true, matched: false }),
+      card2 = EmberObject.create({ index: 1, image: emberImage, reveal: true, matched: false });
 
   component.setMatched(card1, card2);
 

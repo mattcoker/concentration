@@ -1,6 +1,8 @@
-import Ember from 'ember';
+import { reads } from '@ember/object/computed';
+import EmberObject, { computed } from '@ember/object';
+import Controller from '@ember/controller';
 
-export default Ember.Controller.extend({
+export default Controller.extend({
   images: [
     '/assets/images/react.png',
     '/assets/images/ember.png',
@@ -12,34 +14,34 @@ export default Ember.Controller.extend({
   score: 0,
   attempts: 0,
 
-  randomizedCards: Ember.computed(function() {
+  randomizedCards: computed(function() {
     let images = this.get('images'),
         duplicatedImages = images.concat(images);
 
     return duplicatedImages.sort(() => { return 0.5 - Math.random() });
   }),
 
-  cardsWithMetadata: Ember.computed('randomizedCards.[]', function() {
+  cardsWithMetadata: computed('randomizedCards.[]', function() {
     return this.get('randomizedCards').map((image, index) => {
-      return Ember.Object.create({
+      return EmberObject.create({
         index: index,
         image: image,
         reveal: false,
         match: false
       });
-    })
+    });
   }),
 
-  numCards: Ember.computed.reads('cardsWithMetadata.length'),
+  numCards: reads('cardsWithMetadata.length'),
 
-  gameOver: Ember.computed('cardsWithMetadata.@each.match', function() {
+  gameOver: computed('cardsWithMetadata.@each.match', function() {
     let numCards        = this.get('numCards'),
         numMatchedCards = this.get('cardsWithMetadata').filterBy('match', true).get('length');
 
     return numMatchedCards === numCards;
   }),
 
-  statusMessage: Ember.computed('gameOver', 'score', 'attempts', function() {
+  statusMessage: computed('gameOver', 'score', 'attempts', function() {
     let { gameOver, score, attempts, numCards} = this.getProperties('gameOver', 'score', 'attempts', 'numCards'),
         maxScore = numCards / 2;
     if (gameOver) return `Game Over! You finished with a score of ${score} out of a possible ${maxScore}`;

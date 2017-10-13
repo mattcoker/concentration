@@ -1,4 +1,4 @@
-import Ember from 'ember';
+import EmberObject from '@ember/object';
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
@@ -9,7 +9,7 @@ moduleForComponent('flip-card', 'Integration | Component | flip card', {
 
   beforeEach: function() {
     this.setProperties({
-      card: Ember.Object.create({ index: 0, image: emberImage, reveal: false, matched: false }),
+      card: EmberObject.create({ index: 0, image: emberImage, reveal: false, matched: false }),
       disabled: false
     });
 
