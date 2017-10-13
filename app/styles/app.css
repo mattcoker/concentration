@@ -21,3 +21,7 @@ h1.ui.center.header {
 .card.reveal .front {
   display: none;
 }
+
+.card.has-been-matched {
+  visibility: hidden;
+}
