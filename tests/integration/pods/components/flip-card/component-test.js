@@ -2,7 +2,7 @@ import EmberObject from '@ember/object';
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
-const emberImage = '/assets/images/ember.png';
+const emberImage = 'ember.png';
 
 moduleForComponent('flip-card', 'Integration | Component | flip card', {
   integration: true,

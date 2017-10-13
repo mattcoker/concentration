@@ -3,14 +3,7 @@ import EmberObject, { computed } from '@ember/object';
 import Controller from '@ember/controller';
 
 export default Controller.extend({
-  images: [
-    '/assets/images/react.png',
-    '/assets/images/ember.png',
-    '/assets/images/angular.png',
-    '/assets/images/vue.png',
-    '/assets/images/polymer.png',
-    '/assets/images/backbone.png'
-  ],
+  images: ['react.png','ember.png','angular.png','vue.png','polymer.png','backbone.png'],
   score: 0,
   attempts: 0,
 

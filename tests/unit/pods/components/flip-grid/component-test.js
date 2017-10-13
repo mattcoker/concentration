@@ -1,8 +1,8 @@
 import EmberObject from '@ember/object';
 import { moduleForComponent, test } from 'ember-qunit';
 
-const emberImage = '/assets/images/ember.png',
-      reactImage = '/assets/images/react.png';
+const emberImage = 'ember.png',
+      reactImage = 'react.png';
 
 moduleForComponent('flip-grid', 'Unit | Component | flip grid', {
   // Specify the other units that are required for this test

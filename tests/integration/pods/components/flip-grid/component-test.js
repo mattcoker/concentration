@@ -2,8 +2,8 @@ import EmberObject from '@ember/object';
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
-const emberImage = '/assets/images/ember.png',
-      reactImage = '/assets/images/react.png';
+const emberImage = 'ember.png',
+      reactImage = 'react.png';
 
 moduleForComponent('flip-grid', 'Integration | Component | flip grid', {
   integration: true,
